@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 10:09:30 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/05 12:52:26 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/06 10:02:19 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,30 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 		try : name_(name), grade_(grade)
 {
 	FORMAT_COPY_CONTROL("Parameterized ctor called.");
+	if (grade > 150)
+		throw GradeTooLowException();
+	else if (grade < 1)
+		throw GradeTooHighException();
 }
-catch (GradeTooHighException &e)
+catch (const GradeTooHighException &e)
 {
 	COPY_CONTROL_FAILURE("Parameterized ctor failed: ", e.what());
 }
-catch (GradeTooLowException &e)
+catch (const GradeTooLowException &e)
 {
 	COPY_CONTROL_FAILURE("Parameterized ctor failed: ", e.what());
 }
+//Bureaucrat::Bureaucrat(std::string name, int grade)
+//		  : name_(name), grade_(grade)
+//{
+//	FORMAT_COPY_CONTROL("Parameterized ctor called.");
+//	if (grade < 1)
+//		throw GradeTooHighException();
+//	else if (grade > 150)
+//		throw GradeTooLowException();
+//	else
+//		grade_ = grade;
+//}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &rhs)
 		  : name_(rhs.name_), grade_(rhs.grade_)
@@ -97,6 +112,6 @@ Bureaucrat &Bureaucrat::operator--()
 
 std::ostream &operator<<(std::ostream &out_stream, const Bureaucrat &rhs)
 {
-	out_stream << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
+	out_stream << AC_CYAN << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << AC_NORMAL;
 	return (out_stream);
 }

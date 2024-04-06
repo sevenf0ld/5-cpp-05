@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 08:54:17 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/05 11:35:36 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/06 10:04:11 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@
 #define AC_ITALIC "\033[3m"
 
 #define FORMAT_COPY_CONTROL(str) std::cout << AC_BOLD << str << AC_NORMAL << std::endl;
-#define COPY_CONTROL_FAILURE(err_alert, err_msg) std::cerr << AC_RED << err_alert << err_msg << std::endl;
+#define COPY_CONTROL_FAILURE(err_alert, err_msg) std::cerr << AC_RED << err_alert << err_msg << AC_NORMAL << std::endl;
+#define FORMAT_TEST(str) std::cout << AC_BOLD << AC_ITALIC << "[ " << str << " ]" << AC_NORMAL << std::endl;
 
 #include <iostream>
 #include <string>
