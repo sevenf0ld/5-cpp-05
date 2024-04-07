@@ -51,12 +51,12 @@ public:
 	{
 	public:
 		// override specifier only allowed in c++11
-		virtual const char *what() const throw ();
+		virtual const char *what() const throw();
 	};
-	class GradeTooLowException: public std::exception
+	class GradeTooLowException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw ();
+		virtual const char *what() const throw();
 	};
 
 	// accessors / getters

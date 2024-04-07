@@ -24,7 +24,8 @@ int main(void)
 	FORMAT_TEST("MAX AND MIN GRADE TEST");
 	Bureaucrat max("max", 1);
 	Bureaucrat min("min", 150);
-	std::cout << "\t" << max << std::endl << "\t" << min << std::endl;
+	std::cout << "\t" << max << std::endl
+			  << "\t" << min << std::endl;
 	std::cout << std::endl;
 
 	FORMAT_TEST("BEYOND MAX AND MIN GRADE TEST");

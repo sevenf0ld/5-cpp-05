@@ -13,7 +13,7 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat()
-		  : name_("def"), grade_(150)
+	: name_("def"), grade_(150)
 {
 	FORMAT_COPY_CONTROL("Default ctor called.");
 }
@@ -21,7 +21,7 @@ Bureaucrat::Bureaucrat()
 // catching exceptions in member-initalizer list
 // (source: https://stackoverflow.com/a/160164)
 Bureaucrat::Bureaucrat(std::string name, int grade)
-		try : name_(name), grade_(grade)
+try : name_(name), grade_(grade)
 {
 	FORMAT_COPY_CONTROL("Parameterized ctor called.");
 	if (grade > 150)
@@ -37,7 +37,7 @@ catch (const GradeTooLowException &e)
 {
 	COPY_CONTROL_FAILURE("Parameterized ctor failed: ", e.what());
 }
-//Bureaucrat::Bureaucrat(std::string name, int grade)
+// Bureaucrat::Bureaucrat(std::string name, int grade)
 //		  : name_(name), grade_(grade)
 //{
 //	FORMAT_COPY_CONTROL("Parameterized ctor called.");
@@ -47,10 +47,10 @@ catch (const GradeTooLowException &e)
 //		throw GradeTooLowException();
 //	else
 //		grade_ = grade;
-//}
+// }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &rhs)
-		  : name_(rhs.name_), grade_(rhs.grade_)
+	: name_(rhs.name_), grade_(rhs.grade_)
 {
 	FORMAT_COPY_CONTROL("Copy ctor called.");
 }
@@ -68,12 +68,12 @@ Bureaucrat::~Bureaucrat()
 	FORMAT_COPY_CONTROL("Dtor called.");
 }
 
-const char *Bureaucrat::GradeTooHighException::what() const throw ()
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Grade is too high (1 is the highest grade).");
 }
 
-const char *Bureaucrat::GradeTooLowException::what() const throw ()
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low (150 is the lowest grade).");
 }
