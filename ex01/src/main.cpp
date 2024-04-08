@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:12:44 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/08 11:44:52 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/08 11:41:03 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 int main(void)
 {
 	FORMAT_TEST("FORM CREATIONS");
-	Form max("A1", 11, 25);
-	Form min("Z150", 11, 25);
-	//Form max("A1");
-	//Form min("Z150");
+	Form max("A1");
+	Form min("Z150");
 	std::cout << max << std::endl
 			  << min << std::endl;
 	std::cout << std::endl;
