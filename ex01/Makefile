@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/05 08:53:41 by maiman-m          #+#    #+#              #
-#    Updated: 2024/04/05 08:53:42 by maiman-m         ###   ########.fr        #
+#    Created: 2024/04/08 09:09:15 by maiman-m          #+#    #+#              #
+#    Updated: 2024/04/08 09:19:25 by maiman-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CXXFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98 -g3 -pedantic
 
 CPPFLAGS = -I include
 
-SOURCE = main.cpp Bureaucrat.cpp
+SOURCE = main.cpp Bureaucrat.cpp Form.cpp
 
 SRCS = $(addprefix src/,$(SOURCE))
 	   

@@ -6,14 +6,14 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 10:09:30 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/06 10:02:19 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/08 10:49:08 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "zero_one.h"
 
 Bureaucrat::Bureaucrat()
-	: name_("def"), grade_(150)
+	: name_("def"), grade_(MIN_GRADE)
 {
 	FORMAT_COPY_CONTROL("Default ctor called.");
 }
@@ -24,9 +24,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 try : name_(name), grade_(grade)
 {
 	FORMAT_COPY_CONTROL("Parameterized ctor called.");
-	if (grade > 150)
+	if (grade > MIN_GRADE)
 		throw GradeTooLowException();
-	else if (grade < 1)
+	else if (grade < MAX_GRADE)
 		throw GradeTooHighException();
 }
 catch (const GradeTooHighException &e)
@@ -90,7 +90,7 @@ int Bureaucrat::getGrade(void) const
 
 Bureaucrat &Bureaucrat::operator++()
 {
-	if (grade_ - 1 < 1)
+	if (grade_ - 1 < MAX_GRADE)
 		throw GradeTooHighException();
 	else
 	{
@@ -101,7 +101,7 @@ Bureaucrat &Bureaucrat::operator++()
 
 Bureaucrat &Bureaucrat::operator--()
 {
-	if (grade_ + 1 > 150)
+	if (grade_ + 1 > MIN_GRADE)
 		throw GradeTooLowException();
 	else
 	{
@@ -110,8 +110,16 @@ Bureaucrat &Bureaucrat::operator--()
 	}
 }
 
-std::ostream &operator<<(std::ostream &out_stream, const Bureaucrat &rhs)
+std::ostream &operator<<(std::ostream &out_stream, const Bureaucrat &obj)
 {
-	out_stream << AC_CYAN << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << AC_NORMAL;
+	out_stream << AC_CYAN << obj.getName() << ", bureaucrat grade " << obj.getGrade() << AC_NORMAL;
 	return (out_stream);
+}
+
+void Bureaucrat::signForm(const Form &obj)
+{
+	if (grade_ <= obj.get_sign_grade())
+		std::cout << name_ << " signed " << obj.get_name() << std::endl;
+	else
+		std::cout << name_ << " couldn't sign " << obj.get_name() << " because grade is too low." << std::endl;
 }

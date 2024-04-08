@@ -6,11 +6,11 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:12:44 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/06 10:03:41 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/08 09:18:47 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "zero_one.h"
 
 int main(void)
 {
@@ -69,7 +69,7 @@ int main(void)
 	std::cout << std::endl;
 
 	++max;
-	FORMAT_TEST("INCCREMENT BEYOND THE MAX GRADE TEST");
+	FORMAT_TEST("INCREMENT BEYOND THE MAX GRADE TEST");
 	try
 	{
 		++max;
