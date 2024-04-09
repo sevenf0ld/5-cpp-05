@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:10:27 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 12:59:23 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 22:55:44 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void AForm::beSigned(Bureaucrat &obj)
 std::ostream &operator<<(std::ostream &out_stream, const AForm &obj)
 {
 	out_stream << "|"
-			  << std::setw(COLUMN_WIDTH) << "Name"
+			  << std::setw(COLUMN_WIDTH + 13) << "Name"
 			  << "|"
 			  << std::setw(COLUMN_WIDTH) << "Sign Status"
 			  << "|"
@@ -90,7 +90,7 @@ std::ostream &operator<<(std::ostream &out_stream, const AForm &obj)
 			  << std::setw(COLUMN_WIDTH) << "Target"
 			  << "|" << std::endl;
 	out_stream << "|"
-			  << std::setw(COLUMN_WIDTH) << obj.get_name()
+			  << std::setw(COLUMN_WIDTH + 13) << obj.get_name()
 			  << "|"
 			  << std::setw(COLUMN_WIDTH) << (obj.get_sign_status() ? "Signed" : "Unsigned")
 			  << "|"

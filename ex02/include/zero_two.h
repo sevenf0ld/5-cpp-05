@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:15:26 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 13:37:57 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 22:56:46 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 
 #define MAX_GRADE 1
 #define MIN_GRADE 150
-#define COLUMN_WIDTH 23
+#define COLUMN_WIDTH 15
 
 #include <iostream>
 #include <string>
