@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 08:54:17 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 10:45:30 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 13:39:00 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ public:
 	Bureaucrat &operator--();
 
 	void signForm(AForm &obj);
+	void executeForm(AForm const &form);
 
 private:
 	const std::string name_;

@@ -6,7 +6,7 @@
 #    By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 09:09:15 by maiman-m          #+#    #+#              #
-#    Updated: 2024/04/09 10:06:20 by maiman-m         ###   ########.fr        #
+#    Updated: 2024/04/09 11:12:27 by maiman-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CXXFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98 -g3 -pedantic
 
 CPPFLAGS = -I include
 
-SOURCE = main.cpp Bureaucrat.cpp AForm.cpp
+SOURCE = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 SRCS = $(addprefix src/,$(SOURCE))
 	   

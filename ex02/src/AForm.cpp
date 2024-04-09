@@ -6,19 +6,19 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:10:27 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 10:58:20 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:59:23 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zero_two.h"
 
 AForm::AForm()
-	: name_("def"), is_signed_(false), sign_grade_(10), exec_grade_(25)
+	: name_("AForm"), is_signed_(false), sign_grade_(10), exec_grade_(25), target_(NULL)
 {
 }
 
-AForm::AForm(std::string target)
-	: name_("D00"), is_signed_(false), sign_grade_(10), exec_grade_(25), target_(target)
+AForm::AForm(std::string name, int sign, int exec, std::string target)
+	: name_(name), is_signed_(false), sign_grade_(sign), exec_grade_(exec), target_(target)
 {
 }
 
@@ -78,15 +78,37 @@ void AForm::beSigned(Bureaucrat &obj)
 
 std::ostream &operator<<(std::ostream &out_stream, const AForm &obj)
 {
-	out_stream << std::boolalpha << AC_MAGENTA << "\t" << obj.get_name()
-			   << " is " << (obj.get_sign_status() ? "signed" : "not signed") << std::endl
-			   << "to sign:\t" << obj.get_sign_grade() << std::endl
-			   << "to execute:\t" << obj.get_exec_grade() << std::endl
-			   << "target:\t" << obj.get_target() << AC_NORMAL << std::endl;
+	out_stream << "|"
+			  << std::setw(COLUMN_WIDTH) << "Name"
+			  << "|"
+			  << std::setw(COLUMN_WIDTH) << "Sign Status"
+			  << "|"
+			  << std::setw(COLUMN_WIDTH) << "Sign Grade"
+			  << "|"
+			  << std::setw(COLUMN_WIDTH) << "Exec Grade"
+			  << "|"
+			  << std::setw(COLUMN_WIDTH) << "Target"
+			  << "|" << std::endl;
+	out_stream << "|"
+			  << std::setw(COLUMN_WIDTH) << obj.get_name()
+			  << "|"
+			  << std::setw(COLUMN_WIDTH) << (obj.get_sign_status() ? "Signed" : "Unsigned")
+			  << "|"
+			  << std::setw(COLUMN_WIDTH) << obj.get_sign_grade()
+			  << "|"
+			  << std::setw(COLUMN_WIDTH) << obj.get_exec_grade()
+			  << "|"
+			  << std::setw(COLUMN_WIDTH) << obj.get_target()
+			  << "|" << std::endl;
 	return (out_stream);
 }
 
 const std::string AForm::get_target(void) const
 {
 	return (target_);
+}
+
+const char *AForm::FormUnsignedException::what() const throw()
+{
+	return ("Form unsigned.");
 }

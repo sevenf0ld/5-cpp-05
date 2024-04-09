@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:15:07 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 10:58:42 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:50:20 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 class AForm
 {
 public:
-	AForm(std::string target);
+	AForm();
+	AForm(std::string name, int sign, int exec, std::string target);
 	AForm(const AForm &rhs);
 	AForm &operator=(const AForm &rhs);
 	~AForm();
@@ -29,6 +30,11 @@ public:
 		virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
+	{
+	public:
+		virtual const char *what() const throw();
+	};
+	class FormUnsignedException: public std::exception
 	{
 	public:
 		virtual const char *what() const throw();
@@ -44,8 +50,6 @@ public:
 	virtual void execute(Bureaucrat const &executor) const = 0;
 
 private:
-	AForm();
-
 	const std::string name_;
 	bool is_signed_;
 	const int sign_grade_;

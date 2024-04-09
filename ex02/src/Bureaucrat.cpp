@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 10:09:30 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 10:45:45 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 13:40:59 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,4 +105,13 @@ void Bureaucrat::signForm(AForm &obj)
 	else
 		std::cout << name_ << " couldn't sign " << obj.get_name() << ". ";
 	obj.beSigned(*this);
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+	if (grade_ <= form.get_exec_grade())
+		std::cout << name_ << " executed " << form.get_name() << std::endl;
+	else
+		std::cout << name_ << " couldn't execute " << form.get_name() << ". ";
+	form.execute(*this);
 }

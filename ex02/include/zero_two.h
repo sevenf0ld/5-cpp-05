@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:15:26 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 10:19:01 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 13:37:57 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,18 @@
 
 #define MAX_GRADE 1
 #define MIN_GRADE 150
+#define COLUMN_WIDTH 23
 
 #include <iostream>
 #include <string>
 #include <exception>
+#include <iomanip>
+#include <fstream>
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 #endif
