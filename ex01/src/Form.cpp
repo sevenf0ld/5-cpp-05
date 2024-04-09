@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:10:27 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 10:31:24 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/10 00:23:46 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,14 @@ Form::~Form()
 {
 }
 
-// exception messages should be based on sign_grade_ and exec_grade_ instead of min or max
-
 const char *Form::GradeTooHighException::what() const throw()
 {
-	if (sign_grade_ < MAX_GRADE)
-		return ("Grade to sign is too high (1 is the maximum).");
-	return ("Grade to execute is too high (1 is the maximum).");
+	return ("Grade to sign is too high.");
 }
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-	if (sign_grade_ > MIN_GRADE)
-		return ("Grade to sign is too low (150 is the minimum.)");
-	return ("Grade to execute is too low (150 is the minimum.)");
+	return ("Grade to sign is too low.");
 }
 
 const std::string Form::get_name(void) const
