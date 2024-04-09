@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:10:27 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 09:42:44 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 10:31:24 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ Form &Form::operator=(const Form &rhs)
 Form::~Form()
 {
 }
+
+// exception messages should be based on sign_grade_ and exec_grade_ instead of min or max
 
 const char *Form::GradeTooHighException::what() const throw()
 {
