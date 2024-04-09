@@ -6,11 +6,11 @@
 #    By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 09:09:15 by maiman-m          #+#    #+#              #
-#    Updated: 2024/04/08 09:19:25 by maiman-m         ###   ########.fr        #
+#    Updated: 2024/04/09 10:05:23 by maiman-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat
+NAME = form
 
 RESET = reset && make re && reset
 

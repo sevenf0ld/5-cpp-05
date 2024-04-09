@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 10:09:30 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/08 11:36:53 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 09:52:48 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ Bureaucrat::Bureaucrat()
 {
 }
 
-// catching exceptions in member-initalizer list
-// (source: https://stackoverflow.com/a/160164)
 Bureaucrat::Bureaucrat(std::string name, int grade)
 try : name_(name), grade_(grade)
 {
@@ -35,16 +33,6 @@ catch (const GradeTooLowException &e)
 {
 	COPY_CONTROL_FAILURE("Parameterized ctor failed: ", e.what());
 }
-// Bureaucrat::Bureaucrat(std::string name, int grade)
-//		  : name_(name), grade_(grade)
-//{
-//	if (grade < 1)
-//		throw GradeTooHighException();
-//	else if (grade > 150)
-//		throw GradeTooLowException();
-//	else
-//		grade_ = grade;
-// }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &rhs)
 	: name_(rhs.name_), grade_(rhs.grade_)
@@ -115,6 +103,6 @@ void Bureaucrat::signForm(Form &obj)
 	if (grade_ <= obj.get_sign_grade())
 		std::cout << name_ << " signed " << obj.get_name() << std::endl;
 	else
-		std::cout << name_ << " couldn't sign " << obj.get_name() << " because grade is too low." << std::endl;
+		std::cout << name_ << " couldn't sign " << obj.get_name() << ". ";
 	obj.beSigned(*this);
 }

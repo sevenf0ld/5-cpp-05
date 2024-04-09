@@ -6,11 +6,14 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 08:54:17 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/08 11:36:59 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 10:10:16 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zero_one.h"
+
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 class Form;
 
@@ -48,3 +51,5 @@ private:
 };
 
 std::ostream &operator<<(std::ostream &out_stream, const Bureaucrat &obj);
+
+#endif

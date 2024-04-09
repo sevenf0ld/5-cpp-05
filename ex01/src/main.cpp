@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:12:44 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/08 11:41:03 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 09:53:17 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(void)
 	}
 	catch (Form::GradeTooLowException &e)
 	{
-		;
+		EXCEPTION_MSG(e.what());
 	}
 	std::cout << std::endl;
 
@@ -46,10 +46,10 @@ int main(void)
 	}
 	catch (Form::GradeTooLowException &e)
 	{
-		;
+		EXCEPTION_MSG(e.what());
 	}
 	std::cout << std::endl;
 
 	FORMAT_TEST("VERIFY FORM A1");
-	std::cout << max<< std::endl;
+	std::cout << max << std::endl;
 }

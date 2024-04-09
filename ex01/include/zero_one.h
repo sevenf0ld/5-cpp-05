@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:15:26 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/08 10:50:23 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 09:52:25 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@
 #define AC_BOLD "\033[1m"
 #define AC_ITALIC "\033[3m"
 
-#define FORMAT_COPY_CONTROL(str) std::cout << AC_BOLD << str << AC_NORMAL << std::endl;
 #define COPY_CONTROL_FAILURE(err_alert, err_msg) std::cerr << AC_RED << err_alert << err_msg << AC_NORMAL << std::endl;
 #define FORMAT_TEST(str) std::cout << AC_BOLD << AC_ITALIC << "[ " << str << " ]" << AC_NORMAL << std::endl;
+#define EXCEPTION_MSG(err_msg) std::cerr << AC_RED << err_msg << AC_NORMAL << std::endl;
 
 #define MAX_GRADE 1
 #define MIN_GRADE 150

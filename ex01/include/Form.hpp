@@ -6,16 +6,19 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:15:07 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/08 11:35:28 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/09 10:10:37 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zero_one.h"
 
+#ifndef FORM_HPP
+#define FORM_HPP
+
 class Form
 {
 public:
-	//Form(std::string name, int sign_grade, int exec_grade);
+	// Form(std::string name, int sign_grade, int exec_grade);
 	Form(std::string name);
 	Form(const Form &rhs);
 	Form &operator=(const Form &rhs);
@@ -49,3 +52,5 @@ private:
 };
 
 std::ostream &operator<<(std::ostream &out_stream, const Form &obj);
+
+#endif
