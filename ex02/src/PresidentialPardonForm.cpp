@@ -17,12 +17,12 @@ PresidentialPardonForm::PresidentialPardonForm()
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target)
-					 : AForm("PresidentialPardonForm", 25, 5, target)
+	: AForm("PresidentialPardonForm", 25, 5, target)
 {
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &rhs)
-					 : AForm(rhs)
+	: AForm(rhs)
 {
 }
 

@@ -29,6 +29,9 @@ int main(void)
 	std::cout << std::endl;
 
 	FORMAT_TEST("BEYOND MAX AND MIN GRADE TEST");
+	// The catch parameter is initialized from the exception object. Declaring the parameter as a reference to const avoids making a copy.
+	// If a matching catch block is found, the catch parameter is initialized with the exception object, and the body of the catch immediately runs.
+	// a reference aovids the risk of slicing and memory confusion
 	try
 	{
 		Bureaucrat beyond_max("beyond_max", 0);

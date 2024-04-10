@@ -14,22 +14,15 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 {
-	// error: is private within this context
-
-	// error: passing ‘const std::string’ {aka ‘const std::__cxx11::basic_string<char>’} as ‘this’ argument discards qualifiers [-fpermissive]
-	//name_ = "ShrubberyCreationForm";
-	// assignment of read-only members
-	//sign_grade_ = 145;
-	//exec_grade_ = 137;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-					 : AForm("ShruberryCreationForm", 145, 137, target)
+	: AForm("ShruberryCreationForm", 145, 137, target)
 {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &rhs)
-					 : AForm(rhs)
+	: AForm(rhs)
 {
 }
 
@@ -47,10 +40,9 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	if (executor.getGrade() <= get_exec_grade() && get_sign_status())
 	{
-		// Create a file <target>_shrubbery in the working directory, and writes ASCII trees inside it.
-		std::string	outfile(get_target());
+		std::string outfile(get_target());
 		outfile = outfile.append("_shrubbery");
-		std::ofstream	output_file(outfile.c_str());
+		std::ofstream output_file(outfile.c_str());
 		if (!output_file)
 			std::cerr << "Failed to create " << outfile << "." << std::endl;
 		output_file << "	      .         " << std::endl

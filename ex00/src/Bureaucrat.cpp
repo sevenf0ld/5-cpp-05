@@ -24,6 +24,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 try : name_(name), grade_(grade)
 {
 	FORMAT_COPY_CONTROL("Parameterized ctor called.");
+	// the throw statement is not within a try so the exception propagates outward
 	if (grade > 150)
 		throw GradeTooLowException();
 	else if (grade < 1)
@@ -37,17 +38,6 @@ catch (const GradeTooLowException &e)
 {
 	COPY_CONTROL_FAILURE("Parameterized ctor failed: ", e.what());
 }
-// Bureaucrat::Bureaucrat(std::string name, int grade)
-//		  : name_(name), grade_(grade)
-//{
-//	FORMAT_COPY_CONTROL("Parameterized ctor called.");
-//	if (grade < 1)
-//		throw GradeTooHighException();
-//	else if (grade > 150)
-//		throw GradeTooLowException();
-//	else
-//		grade_ = grade;
-// }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &rhs)
 	: name_(rhs.name_), grade_(rhs.grade_)

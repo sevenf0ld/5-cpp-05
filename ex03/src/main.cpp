@@ -59,13 +59,13 @@ void test_invalid(void)
 	Intern intern;
 	AForm *invalid;
 
-	(void) invalid;
+	(void)invalid;
 
 	try
 	{
 		invalid = intern.makeForm("non-existent", "oblivion");
 	}
-	catch (Intern::InvalidFormException &e)
+	catch (const Intern::InvalidFormException &e)
 	{
 		EXCEPTION_MSG(e.what());
 	}

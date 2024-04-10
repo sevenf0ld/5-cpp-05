@@ -28,11 +28,11 @@ void test_shrubbery(void)
 		person.signForm(shrubbery);
 		person.executeForm(shrubbery);
 	}
-	catch (AForm::GradeTooLowException &e)
+	catch (const AForm::GradeTooLowException &e)
 	{
 		EXCEPTION_MSG(e.what());
 	}
-	catch (AForm::FormUnsignedException &e)
+	catch (const AForm::FormUnsignedException &e)
 	{
 		EXCEPTION_MSG(e.what());
 	}
@@ -64,7 +64,7 @@ void test_robotomy(void)
 	{
 		person.signForm(robotomy);
 	}
-	catch (AForm::GradeTooLowException &e)
+	catch (const AForm::GradeTooLowException &e)
 	{
 		EXCEPTION_MSG(e.what());
 	}
@@ -77,11 +77,11 @@ void test_robotomy(void)
 	{
 		person.executeForm(robotomy);
 	}
-	catch (AForm::FormUnsignedException &e)
+	catch (const AForm::FormUnsignedException &e)
 	{
 		EXCEPTION_MSG(e.what());
 	}
-	catch (AForm::GradeTooLowException &e)
+	catch (const AForm::GradeTooLowException &e)
 	{
 		EXCEPTION_MSG(e.what());
 	}
@@ -124,11 +124,11 @@ void test_presidential(void)
 	{
 		officer.executeForm(presidential);
 	}
-	catch (AForm::GradeTooLowException &e)
+	catch (const AForm::GradeTooLowException &e)
 	{
 		EXCEPTION_MSG(e.what());
 	}
-	catch (AForm::FormUnsignedException &e)
+	catch (const AForm::FormUnsignedException &e)
 	{
 		EXCEPTION_MSG(e.what());
 	}

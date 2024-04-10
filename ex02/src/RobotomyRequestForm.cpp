@@ -17,12 +17,12 @@ RobotomyRequestForm::RobotomyRequestForm()
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target)
-					 : AForm("RobotomRequestForm", 72, 45, target)
+	: AForm("RobotomRequestForm", 72, 45, target)
 {
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &rhs)
-					 : AForm(rhs)
+	: AForm(rhs)
 {
 }
 
@@ -43,7 +43,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	{
 		// Makes some drilling noises. Then, informs that <target> has been robotomized successfully 50% of the time. Otherwise, informs that the robotomy failed.
 		std::cout << get_target() << " robotomized successfully 50% of the time." << std::endl;
-		return ;
+		return;
 	}
 	std::cout << "Robotomy failed. ";
 	if (!get_sign_status())

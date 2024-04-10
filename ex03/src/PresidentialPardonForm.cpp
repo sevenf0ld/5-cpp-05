@@ -17,12 +17,12 @@ PresidentialPardonForm::PresidentialPardonForm()
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target)
-					 : AForm("PresidentialPardonForm", 25, 5, target)
+	: AForm("PresidentialPardonForm", 25, 5, target)
 {
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &rhs)
-					 : AForm(rhs)
+	: AForm(rhs)
 {
 }
 
@@ -39,7 +39,6 @@ PresidentialPardonForm::~PresidentialPardonForm()
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	if (executor.getGrade() <= get_exec_grade() && get_sign_status())
-		// Informs that <target> has been pardoned by Zaphod Beeblebrox.
 		std::cout << "President Zaphod Beeblebrox has pardoned " << get_target() << "." << std::endl;
 	else if (!get_sign_status())
 		throw FormUnsignedException();

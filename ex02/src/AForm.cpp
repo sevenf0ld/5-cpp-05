@@ -79,27 +79,27 @@ void AForm::beSigned(Bureaucrat &obj)
 std::ostream &operator<<(std::ostream &out_stream, const AForm &obj)
 {
 	out_stream << "|"
-			  << std::setw(COLUMN_WIDTH + 13) << "Name"
-			  << "|"
-			  << std::setw(COLUMN_WIDTH) << "Sign Status"
-			  << "|"
-			  << std::setw(COLUMN_WIDTH) << "Sign Grade"
-			  << "|"
-			  << std::setw(COLUMN_WIDTH) << "Exec Grade"
-			  << "|"
-			  << std::setw(COLUMN_WIDTH) << "Target"
-			  << "|" << std::endl;
+			   << std::setw(COLUMN_WIDTH + 13) << "Name"
+			   << "|"
+			   << std::setw(COLUMN_WIDTH) << "Sign Status"
+			   << "|"
+			   << std::setw(COLUMN_WIDTH) << "Sign Grade"
+			   << "|"
+			   << std::setw(COLUMN_WIDTH) << "Exec Grade"
+			   << "|"
+			   << std::setw(COLUMN_WIDTH) << "Target"
+			   << "|" << std::endl;
 	out_stream << "|"
-			  << std::setw(COLUMN_WIDTH + 13) << obj.get_name()
-			  << "|"
-			  << std::setw(COLUMN_WIDTH) << (obj.get_sign_status() ? "Signed" : "Unsigned")
-			  << "|"
-			  << std::setw(COLUMN_WIDTH) << obj.get_sign_grade()
-			  << "|"
-			  << std::setw(COLUMN_WIDTH) << obj.get_exec_grade()
-			  << "|"
-			  << std::setw(COLUMN_WIDTH) << obj.get_target()
-			  << "|" << std::endl;
+			   << std::setw(COLUMN_WIDTH + 13) << obj.get_name()
+			   << "|"
+			   << std::setw(COLUMN_WIDTH) << (obj.get_sign_status() ? "Signed" : "Unsigned")
+			   << "|"
+			   << std::setw(COLUMN_WIDTH) << obj.get_sign_grade()
+			   << "|"
+			   << std::setw(COLUMN_WIDTH) << obj.get_exec_grade()
+			   << "|"
+			   << std::setw(COLUMN_WIDTH) << obj.get_target()
+			   << "|" << std::endl;
 	return (out_stream);
 }
 

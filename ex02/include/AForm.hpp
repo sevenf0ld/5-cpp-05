@@ -34,7 +34,7 @@ public:
 	public:
 		virtual const char *what() const throw();
 	};
-	class FormUnsignedException: public std::exception
+	class FormUnsignedException : public std::exception
 	{
 	public:
 		virtual const char *what() const throw();

@@ -42,15 +42,11 @@ public:
 	Bureaucrat &operator=(const Bureaucrat &rhs);
 	~Bureaucrat();
 
-	// exception classes
-	// (source: https://stackoverflow.com/q/23069183)
-	// what member function
+	// override specifier only allowed in c++11
 	// https://en.cppreference.com/w/cpp/error/exception/what
-	// https://eecs280staff.github.io/notes/22_Exceptions.html#:~:text=the%20what()%20member%20function%20is%20a%20virtual%20function
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		// override specifier only allowed in c++11
 		virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception

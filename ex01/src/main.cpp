@@ -28,7 +28,7 @@ int main(void)
 	{
 		eleven.signForm(max);
 	}
-	catch (Form::GradeTooLowException &e)
+	catch (const Form::GradeTooLowException &e)
 	{
 		EXCEPTION_MSG(e.what());
 	}
@@ -44,7 +44,7 @@ int main(void)
 	{
 		nine.signForm(max);
 	}
-	catch (Form::GradeTooLowException &e)
+	catch (const Form::GradeTooLowException &e)
 	{
 		EXCEPTION_MSG(e.what());
 	}

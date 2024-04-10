@@ -18,12 +18,12 @@ Intern::Intern()
 
 Intern::Intern(const Intern &rhs)
 {
-	(void) rhs;
+	(void)rhs;
 }
 
 Intern &Intern::operator=(const Intern &rhs)
 {
-	(void) rhs;
+	(void)rhs;
 	return (*this);
 }
 
@@ -39,13 +39,13 @@ AForm *Intern::makeForm(std::string form_name, std::string form_target)
 	{
 	case SHRUBBERY:
 		pmf = &Intern::create_shrubbery;
-		break ;
+		break;
 	case ROBOTOMY:
 		pmf = &Intern::create_robotomy;
-		break ;
+		break;
 	case PRESIDENTIAL:
 		pmf = &Intern::create_presidential;
-		break ;
+		break;
 	default:
 		throw InvalidFormException();
 	}
