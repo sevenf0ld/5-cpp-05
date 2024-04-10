@@ -6,129 +6,66 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:12:44 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/10 00:14:14 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/10 12:33:00 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zero_three.h"
 
-void test_shrubbery(void)
+void test_subject_file(void)
 {
-	FORMAT_TEST("SHRUBBERY TEST");
+	Intern someRandomIntern;
+	AForm *rrf;
 
-	ShrubberyCreationForm shrubbery("Shrubbery");
-	std::cout << shrubbery << std::endl;
-
-	FORMAT_TEST("BUREAUCRAT OF GRADE 144 SHRUBBERY SIGN AND EXECUTE ATTEMPT");
-	Bureaucrat person("ONE-FOUR-FOUR", 144);
-	std::cout << person << std::endl;
-
-	try
-	{
-		person.signForm(shrubbery);
-		person.executeForm(shrubbery);
-	}
-	catch (AForm::GradeTooLowException &e)
-	{
-		EXCEPTION_MSG(e.what());
-	}
-	catch (AForm::FormUnsignedException &e)
-	{
-		EXCEPTION_MSG(e.what());
-	}
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 	std::cout << std::endl;
 
-	FORMAT_TEST("VERIFY SHRUBBERY FORM");
-	std::cout << shrubbery << std::endl;
-
-	FORMAT_TEST("BUREAUCRAT OF GRADE 1 SHRUBBERY EXECUTE ATTEMPT");
-	Bureaucrat officer("OFFICER", 1);
-	std::cout << officer << std::endl;
-
-	officer.executeForm(shrubbery);
+	Bureaucrat robotomy_officer("Robotomy Officer", 1);
+	robotomy_officer.signForm(*rrf);
+	robotomy_officer.executeForm(*rrf);
 	std::cout << std::endl;
 }
 
-void test_robotomy(void)
+void test_additional_shrubbery(void)
 {
-	FORMAT_TEST("ROBOTOMY TEST");
+	Intern shrubbery_intern;
+	AForm *scf;
 
-	RobotomyRequestForm robotomy("Robotomy");
-	std::cout << robotomy << std::endl;
-
-	FORMAT_TEST("BUREAUCRAT OF GRADE 77 ROBOTOMY SIGN AND EXECUTE ATTEMPT");
-	Bureaucrat person("SEVEN-SEVEN", 77);
-	std::cout << person << std::endl;
-
-	try
-	{
-		person.signForm(robotomy);
-	}
-	catch (AForm::GradeTooLowException &e)
-	{
-		EXCEPTION_MSG(e.what());
-	}
+	scf = shrubbery_intern.makeForm("shrubbery creation", "stardew");
 	std::cout << std::endl;
 
-	FORMAT_TEST("VERIFY ROBOTOMY FORM");
-	std::cout << robotomy << std::endl;
-
-	try
-	{
-		person.executeForm(robotomy);
-	}
-	catch (AForm::FormUnsignedException &e)
-	{
-		EXCEPTION_MSG(e.what());
-	}
-	catch (AForm::GradeTooLowException &e)
-	{
-		EXCEPTION_MSG(e.what());
-	}
+	Bureaucrat shrubbery_officer("Shrubbery Officer", 1);
+	shrubbery_officer.signForm(*scf);
+	shrubbery_officer.executeForm(*scf);
 	std::cout << std::endl;
-
-	FORMAT_TEST("VERIFY ROBOTOMY FORM");
-	std::cout << robotomy << std::endl;
-
-	FORMAT_TEST("BUREAUCRAT OF GRADE 1 ROBOTOMY EXECUTE ATTEMPT");
-	Bureaucrat officer("OFFICER", 1);
-	std::cout << officer << std::endl;
-
-	officer.signForm(robotomy);
-	officer.executeForm(robotomy);
 }
 
-void test_presidential(void)
+void test_additional_presidential(void)
 {
-	FORMAT_TEST("PRESIDENTIAL TEST");
+	Intern presidential_intern;
+	AForm *ppf;
 
-	PresidentialPardonForm presidential("Presidential");
-	std::cout << presidential << std::endl;
-
-	FORMAT_TEST("BUREAUCRAT OF GRADE 2 PRESIDENTIAL SIGN AND EXECUTE ATTEMPT");
-	Bureaucrat person("TWO", 2);
-	std::cout << person << std::endl;
-
-	person.signForm(presidential);
-	person.executeForm(presidential);
+	ppf = presidential_intern.makeForm("presidential pardon", "valley");
 	std::cout << std::endl;
 
-	FORMAT_TEST("VERIFY PRESIDENTIAL FORM");
-	std::cout << presidential << std::endl;
+	Bureaucrat presidential_officer("Presidential Officer", 1);
+	presidential_officer.signForm(*ppf);
+	presidential_officer.executeForm(*ppf);
+	std::cout << std::endl;
+}
 
-	FORMAT_TEST("BUREAUCRAT OF GRADE 50 PRESIDENTIAL EXECUTE ATTEMPT");
-	Bureaucrat officer("OFFICER", 50);
-	std::cout << officer << std::endl;
+void test_invalid(void)
+{
+	Intern intern;
+	AForm *invalid;
+
+	(void) invalid;
 
 	try
 	{
-		officer.executeForm(presidential);
+		invalid = intern.makeForm("non-existent", "oblivion");
 	}
-	catch (AForm::GradeTooLowException &e)
-	{
-		EXCEPTION_MSG(e.what());
-	}
-	catch (AForm::FormUnsignedException &e)
+	catch (Intern::InvalidFormException &e)
 	{
 		EXCEPTION_MSG(e.what());
 	}
@@ -137,9 +74,8 @@ void test_presidential(void)
 
 int main(void)
 {
-	test_shrubbery();
-	std::cout << std::endl;
-	test_robotomy();
-	std::cout << std::endl;
-	test_presidential();
+	test_subject_file();
+	test_additional_shrubbery();
+	test_additional_presidential();
+	test_invalid();
 }

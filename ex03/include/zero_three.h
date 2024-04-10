@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:15:26 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/10 00:41:53 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:19:49 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,13 @@
 #define MIN_GRADE 150
 #define COLUMN_WIDTH 15
 
-typedef AForm *(Intern::*Intern_pmf)(std::string);
+enum forms
+{
+	SHRUBBERY,
+	ROBOTOMY,
+	PRESIDENTIAL,
+	INVALID = -1
+};
 
 #include <iostream>
 #include <string>
@@ -47,5 +53,7 @@ typedef AForm *(Intern::*Intern_pmf)(std::string);
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
+
+typedef AForm *(Intern::*Intern_pmf)(std::string);
 
 #endif
