@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:12:44 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/10 12:33:00 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/04/10 19:00:13 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void test_subject_file(void)
 	robotomy_officer.signForm(*rrf);
 	robotomy_officer.executeForm(*rrf);
 	std::cout << std::endl;
+
+	delete rrf;
 }
 
 void test_additional_shrubbery(void)
@@ -38,6 +40,8 @@ void test_additional_shrubbery(void)
 	shrubbery_officer.signForm(*scf);
 	shrubbery_officer.executeForm(*scf);
 	std::cout << std::endl;
+
+	delete scf;
 }
 
 void test_additional_presidential(void)
@@ -52,6 +56,8 @@ void test_additional_presidential(void)
 	presidential_officer.signForm(*ppf);
 	presidential_officer.executeForm(*ppf);
 	std::cout << std::endl;
+
+	delete ppf;
 }
 
 void test_invalid(void)
