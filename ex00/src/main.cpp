@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:12:44 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/06 10:03:41 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/07/25 12:55:18 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,31 @@ int main(void)
 	std::cout << std::endl;
 
 	++max;
-	FORMAT_TEST("INCCREMENT BEYOND THE MAX GRADE TEST");
+	FORMAT_TEST("INCREMENT BEYOND THE MAX GRADE TEST");
+	try
+	{
+		++max;
+	}
+	catch (const Bureaucrat::GradeTooHighException &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << max << std::endl;
+	std::cout << std::endl;
+
+	FORMAT_TEST("DECREMENT CATCHABLE AS STD::EXCEPTION TEST");
+	try
+	{
+		--min;
+	}
+	catch (const Bureaucrat::GradeTooLowException &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << min << std::endl;
+	std::cout << std::endl;
+
+	FORMAT_TEST("INCREMENT CATCHABLE AS STD::EXCEPTION TEST");
 	try
 	{
 		++max;
