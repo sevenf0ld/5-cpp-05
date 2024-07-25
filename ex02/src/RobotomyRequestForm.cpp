@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:11:32 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/07/25 18:25:05 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/07/25 22:26:42 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 		else
 			std::cout << "Robotomy failed.";
 	}
-	if (!get_sign_status())
+	else if (!get_sign_status())
 		throw FormUnsignedException();
 	else if (executor.getGrade() > get_exec_grade())
 		throw GradeTooLowException();
