@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:11:15 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 23:14:45 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/07/25 18:34:04 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		outfile = outfile.append("_shrubbery");
 		std::ofstream output_file(outfile.c_str());
 		if (!output_file)
+		{
 			std::cerr << "Failed to create " << outfile << "." << std::endl;
+			return ;
+		}
 		output_file << "	      .         " << std::endl
 					<< "	   __/ \\__      " << std::endl
 					<< "	   \\     /      " << std::endl
@@ -64,7 +67,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 					<< "	.o.'.o.'.o.'.   " << std::endl
 					<< "	   [_____]      " << std::endl
 					<< "	    \\___/       " << std::endl;
-		output_file.close();
+		std::cout << "Find ASCII trees in the current directory." << std::endl;
 	}
 	else if (!get_sign_status())
 		throw FormUnsignedException();

@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:11:32 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 23:09:14 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/07/25 18:25:05 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,11 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	if (executor.getGrade() <= get_exec_grade() && get_sign_status())
 	{
 		// Makes some drilling noises. Then, informs that <target> has been robotomized successfully 50% of the time. Otherwise, informs that the robotomy failed.
-		std::cout << get_target() << " robotomized successfully 50% of the time." << std::endl;
-		return;
+		if (rand() % 2)
+			std::cout << get_target() << " robotomized successfully." << std::endl;
+		else
+			std::cout << "Robotomy failed.";
 	}
-	std::cout << "Robotomy failed. ";
 	if (!get_sign_status())
 		throw FormUnsignedException();
 	else if (executor.getGrade() > get_exec_grade())

@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:15:26 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 22:56:46 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/07/25 18:00:32 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@
 #include <exception>
 #include <iomanip>
 #include <fstream>
+#include <cstdlib>
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
