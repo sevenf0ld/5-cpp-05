@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:12:44 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/07/25 12:55:18 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/07/27 01:53:59 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int main(void)
 	{
 		--min;
 	}
-	catch (const Bureaucrat::GradeTooLowException &e)
+	catch (const std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
@@ -101,7 +101,7 @@ int main(void)
 	{
 		++max;
 	}
-	catch (const Bureaucrat::GradeTooHighException &e)
+	catch (const std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
