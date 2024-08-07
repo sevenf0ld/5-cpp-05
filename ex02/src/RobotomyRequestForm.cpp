@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:11:32 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/07/25 22:26:42 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/08/07 16:50:46 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ RobotomyRequestForm::RobotomyRequestForm()
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target)
-	: AForm("RobotomRequestForm", 72, 45, target)
+	: AForm("RobotomyRequestForm", 72, 45, target)
 {
 }
 
