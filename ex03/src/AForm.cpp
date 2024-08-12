@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:10:27 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 22:55:44 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/08/12 18:24:24 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ AForm &AForm::operator=(const AForm &rhs)
 
 AForm::~AForm()
 {
+	FORMAT_DTOR("AForm dtor called.");
 }
 
 const char *AForm::GradeTooHighException::what() const throw()

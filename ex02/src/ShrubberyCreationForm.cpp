@@ -54,7 +54,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		if (!output_file)
 		{
 			std::cerr << "Failed to create " << outfile << "." << std::endl;
-			return ;
+			return;
 		}
 		output_file << "	      .         " << std::endl
 					<< "	   __/ \\__      " << std::endl

@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:11:15 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/07/25 22:26:11 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/08/12 18:24:45 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
+	FORMAT_DTOR("Shruberry dtor called.");
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
@@ -46,7 +47,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		if (!output_file)
 		{
 			std::cerr << "Failed to create " << outfile << "." << std::endl;
-			return ;
+			return;
 		}
 		output_file << "	      .         " << std::endl
 					<< "	   __/ \\__      " << std::endl

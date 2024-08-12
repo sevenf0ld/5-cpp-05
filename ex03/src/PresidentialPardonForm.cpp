@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:40:27 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/09 23:15:21 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/08/12 18:25:31 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
+	FORMAT_DTOR("Presidential dtor called.");
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const

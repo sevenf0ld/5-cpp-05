@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 00:31:08 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/04/10 12:31:44 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/08/12 18:21:38 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ const char *Intern::InvalidFormException::what() const throw()
 
 forms Intern::hash_form(std::string form_name)
 {
-	if (form_name == "shrubbery creation")
+	if (form_name == "ShrubberyCreationForm")
 		return (SHRUBBERY);
-	else if (form_name == "robotomy request")
+	else if (form_name == "RobotomyRequestForm")
 		return (ROBOTOMY);
-	else if (form_name == "presidential pardon")
+	else if (form_name == "PresidentialPardonForm")
 		return (PRESIDENTIAL);
 	else
 		return (INVALID);

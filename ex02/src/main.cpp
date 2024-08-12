@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:12:44 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/07/25 18:25:27 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/08/12 18:03:23 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void test_shrubbery(void)
 	std::cout << officer << std::endl;
 
 	officer.executeForm(shrubbery);
-	std::cout << std::endl;
 }
 
 void test_robotomy(void)
