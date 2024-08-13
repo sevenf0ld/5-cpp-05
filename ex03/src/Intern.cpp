@@ -6,7 +6,7 @@
 /*   By: maiman-m <maiman-m@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 00:31:08 by maiman-m          #+#    #+#             */
-/*   Updated: 2024/08/13 02:44:56 by maiman-m         ###   ########.fr       */
+/*   Updated: 2024/08/13 15:50:34 by maiman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,31 @@ AForm *Intern::makeForm(std::string form_name, std::string form_target)
 	return ((this->*pmf)(form_target));
 	*/
 
+	/*
 	switch (hash_form(form_name))
 	{
 	case SHRUBBERY:
-		break;
 	case ROBOTOMY:
-		break;
 	case PRESIDENTIAL:
 		break;
 	default:
 		throw InvalidFormException();
 	}
+	*/
+
+	switch (hash_form(form_name))
+	{
+	case INVALID:
+		throw InvalidFormException();
+	default:
+		break;
+	}
 
 	Intern_pmf pmf[3] = {&Intern::create_shrubbery, &Intern::create_robotomy, &Intern::create_presidential};
+
+	std::cout << AC_GREEN << "Intern creates " << form_name
+			  << " with " << form_target << " as target."
+			  << AC_NORMAL;
 
 	return ((this->*pmf[hash_form(form_name)])(form_target));
 }
@@ -78,6 +90,7 @@ const char *Intern::InvalidFormException::what() const throw()
 
 forms Intern::hash_form(std::string form_name)
 {
+	/*
 	if (form_name == "ShrubberyCreationForm")
 		return (SHRUBBERY);
 	else if (form_name == "RobotomyRequestForm")
@@ -86,6 +99,11 @@ forms Intern::hash_form(std::string form_name)
 		return (PRESIDENTIAL);
 	else
 		return (INVALID);
+	*/
+	return (!form_name.compare("ShrubberyCreationForm")	   ? SHRUBBERY
+			: !form_name.compare("RobotomyRequestForm")	   ? ROBOTOMY
+			: !form_name.compare("PresidentialPardonForm") ? PRESIDENTIAL
+														   : INVALID);
 }
 
 AForm *Intern::create_shrubbery(std::string target)
